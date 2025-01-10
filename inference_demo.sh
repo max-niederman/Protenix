@@ -21,7 +21,7 @@ N_cycle=10
 seed=101
 
 input_json_path="./examples/example.json"
-dump_dir="./output_esm"
+dump_dir="./output"
 
 python3 runner/inference.py \
 --seeds ${seed} \
