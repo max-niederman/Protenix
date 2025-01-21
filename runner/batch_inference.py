@@ -219,6 +219,7 @@ def inference_jsons(
     inference_configs["input_json_path"] = infer_jsons[0]
     runner = get_default_runner(seeds, n_cycle, n_step, n_sample)
     configs = runner.configs
+    configs.use_esm = use_esm
     for idx, infer_json in enumerate(tqdm.tqdm(infer_jsons)):
         try:
             configs["input_json_path"] = update_infer_json(
