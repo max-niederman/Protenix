@@ -141,7 +141,7 @@ class PairformerBlock(nn.Module):
             z = z.transpose(-2, -3).contiguous()
             z += self.tri_att_end(
                 z,
-                mask=pair_mask.tranpose(-1, -2) if pair_mask is not None else None,
+                mask=pair_mask.transpose(-1, -2) if pair_mask is not None else None,
                 use_memory_efficient_kernel=use_memory_efficient_kernel,
                 use_deepspeed_evo_attention=use_deepspeed_evo_attention,
                 use_lma=use_lma,
@@ -184,7 +184,7 @@ class PairformerBlock(nn.Module):
             z = z + self.dropout_row(
                 self.tri_att_end(
                     z,
-                    mask=pair_mask.tranpose(-1, -2) if pair_mask is not None else None,
+                    mask=pair_mask.transpose(-1, -2) if pair_mask is not None else None,
                     use_memory_efficient_kernel=use_memory_efficient_kernel,
                     use_deepspeed_evo_attention=use_deepspeed_evo_attention,
                     use_lma=use_lma,
